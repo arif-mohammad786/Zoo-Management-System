@@ -1,0 +1,46 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color:#403d39">
+  <a class="navbar-brand" href="{% url 'home' %}">ZOO Management System</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link font-weight-bold {% if title == 'home' %} current-page {% endif %}"  href="{% url 'home' %}">Home</a>
+      </li>
+      {% if not request.user.is_authenticated %}
+        <li class="nav-item  active">
+          <a class="nav-link font-weight-bold {% if title == 'ticket cost' %} current-page {% endif %}" href="{% url 'ticketcost' %}">Tickets Cost</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link font-weight-bold {% if title == 'About Us' %} current-page {% endif %}" href="{% url 'about' %}">About Us</a>
+        </li>
+        <li class="nav-item  active">
+          <a class="nav-link font-weight-bold {% if title == 'Contact Us' %} current-page {% endif %}" href="{% url 'contact' %}">Contact Us</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link font-weight-bold {% if title == 'Available Animals' %} current-page {% endif %}" href="{% url 'showavailableanimals' %}">Animals</a>
+        </li>
+         <li class="nav-item active">
+          <a class="nav-link font-weight-bold {% if title == 'Feedback' %} current-page {% endif %}" href="{% url 'feedbacksection' %}">Feedback</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link font-weight-bold {% if title == 'Login' %} current-page {% endif %}" href="{% url 'adminlogin' %}">Admin</a>
+        </li>
+      {% endif %}
+      {% if request.user.is_authenticated %}
+        <li class="nav-item dropdown" style="margin-right:5px;">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+          Admin<i class="fas fa-user mr-2 ml-2"></i>{{name}}</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="{% url 'changepass' %}"><i class="fas fa-cog mr-2"></i>Settings</a>
+            <div role="separator" class="dropdown-divider"></div>
+            <a class="dropdown-item" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt mr-2"></i>Logout</a>
+          </div>
+        </li>
+      {% endif %}
+    </ul>
+  </div>
+</nav>

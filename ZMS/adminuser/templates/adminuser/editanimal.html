@@ -1,0 +1,57 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Update Animal
+{% endblock title %}
+
+{% block navigationbar %}
+    {% include 'core/navbar.html' %}
+{% endblock navigationbar %}
+
+{% block content %}
+    <div class="container-fluid" style="margin-top:70px;">
+    <h3 class="text-secondary font-weight-bold  text-right alert alert-light border shadow-sm" style="z-index:0;">{{page}}</h3>
+        <div class="row">
+            {% include 'adminuser/sidebar.html' %}
+
+            <div class="col-sm-12 col-md-9 col-lg-10 offset-md-3 offset-lg-2 margin-main">
+                <div class="container-fluid jumbotron">
+                    <div class="row">
+                        <div class="col-md-8 offset-1">
+                            <form action="" method="POST" enctype="multipart/form-data" novalidate>
+                                {% csrf_token %}
+                                {% if messages %}
+                                    {% for message in messages %}
+                                        <h3 class="text-{{message.tags}}">{{message}}</h3>
+                                    {% endfor %}
+                                {% endif %}
+
+                                {% if form.non_field_errors %}
+                                    {% for error in form.non_field_errors %}
+                                        <h4 class="text-danger">{{error}}</h4>
+                                    {% endfor %}
+                                {% endif %}
+
+                                {% for field in form %}
+                                    <div class="form-group">
+                                        <span class="font-italic ">{{field.label_tag}}</span>
+                                        <span>{{field}}</span>
+                                        <span style="list-style-type:None;color:red;">{{field.errors|striptags}}</span>
+                                    </div>
+                                {% endfor %}
+
+                                <input type="submit" value="Update" class="btn btn-primary my-1 btn-lg">
+                            </form>
+                        </div>
+                        <div class="col-md-3">
+                            <img src="{{url}}" class="rounded-circle" width="200px" height="200px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

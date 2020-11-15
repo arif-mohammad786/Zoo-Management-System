@@ -1,0 +1,50 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Update Contact Details
+{% endblock title %}
+
+{% block navigationbar %}
+    {% include 'core/navbar.html' %}
+{% endblock navigationbar %}
+
+{% block content %}
+    <div class="container-fluid" style="margin-top:70px;">
+    <h3 class="text-secondary font-weight-bold  text-right alert alert-light border shadow-sm" style="z-index:0;">{{page}}</h3>
+        <div class="row">
+            {% include 'adminuser/sidebar.html' %}
+
+            <div class="col-sm-12 col-md-9 col-lg-10 offset-md-3 offset-lg-2 margin-main">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6 mt-3">
+                            <form action="" method="POST">
+                                {% csrf_token %}
+                                {% if messages %}
+                                    {% for message in messages %}
+                                        <h3 class="text-{{message.tags}}">{{message}}</h3>
+                                    {% endfor %}
+                                {% endif %}
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" name="newemail" placeholder="Enter New Email" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="number" class="form-control" name="newphone" placeholder="Enter New Phone Number" required>
+                                    </div>
+                                    <input type="submit" class="btn btn-primary" value="Update">
+                            </form>
+                        </div>
+                        <div class="col-md-6  shadow alert alert-light bg-light my-3">
+                            <h3 class="text-secondary" style="font-family:san-serif;">Current Contact Details</h3>
+                            <p><span  style="font-family:san-serif;">Email: </span>{{email}}</p>
+                            <p><span  style="font-family:san-serif;">Phone: </span>{{phone}}</p>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

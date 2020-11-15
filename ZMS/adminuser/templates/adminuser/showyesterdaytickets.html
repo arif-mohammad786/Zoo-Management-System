@@ -1,0 +1,52 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Yesterday's Tickets
+{% endblock title %}
+
+{% block navigationbar %}
+    {% include 'core/navbar.html' %}
+{% endblock navigationbar %}
+
+{% block content %}
+    <div class="container-fluid" style="margin-top:70px;">
+    <h3 class="text-secondary font-weight-bold  text-right alert alert-light border shadow-sm" style="z-index:0;">{{page}}</h3>
+        <div class="row">
+            {% include 'adminuser/sidebar.html' %}
+
+            <div class="col-sm-8 col-md-9 col-lg-10 offset-2">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-11">
+                            <table class="table table-striped border">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>No. of Adults</th>
+                                        <th>No. of Childrens</th>
+                                        <th>Date</th>
+                                        <th>Total Price(Rs)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for ticket in tickets %}
+                                        <tr>
+                                            <td>{{ticket.id}}</td>
+                                            <td>{{ticket.adult}}</td>
+                                            <td>{{ticket.children}}</td>
+                                            <td>{{ticket.date}}</td>
+                                            <td>{{ticket.total}}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

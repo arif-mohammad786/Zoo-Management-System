@@ -1,0 +1,35 @@
+from django.urls import path
+from .import views
+urlpatterns = [
+    path('about/',views.about,name="about"),
+    path('contact/',views.contact,name="contact"),
+    path('adminlogin/',views.admin_login,name="adminlogin"),
+    path('dashboard/',views.dashboard,name="dashboard"),
+    path('logout/',views.logoutfunction,name="logout"),
+    path('addanimal/',views.addanimal,name="addanimal"),
+    path('availableanimals/',views.availableanimals,name="availableanimals"),
+    path('updateanimal/<int:id>/',views.updateanimal,name="updateanimal"),
+    path('deleteanimal/<int:id>/',views.deleteanimal,name="deleteanimal"),
+    path('tickettypes/',views.ticket_types,name="tickettypes"),
+    path('edittickettype/<int:id>/',views.edit_ticket_type,name="edittickettype"),
+    path('feedback/',views.feedbacks,name="feedback"),
+    path('deletefeedback/<int:id>/',views.delete_feedback,name="deletefeedback"),
+    path('changepass/',views.change_password,name="changepass"),
+    path('updatecontactdetails/',views.update_contact_details,name="updatecontactdetails"),
+    path('updateaboutdetails/',views.update_about_details,name="updateaboutdetails"),
+    path('addemployee/',views.add_new_employee,name="addemployee"),
+    path('availableemployees/',views.show_available_employees,name="availableemployees"),
+    path('deleteemployee/<int:id>/',views.delete_employee,name="deleteemployee"),
+    path('updateemployee/<int:id>/',views.update_employee,name="updateemployee"),
+    path('normalticket/',views.normal_ticket,name="normalticket"),
+    path('printticket/',views.print_ticket,name="printticket"),
+    path('shownormalticket/',views.show_normal_tickets,name="shownormalticket"),
+    path('deletenormalticket/<int:id>/',views.delete_normal_ticket,name="deletenormalticket"),
+    path('foreignersticket/',views.foreigners_ticket,name="foreignersticket"),
+    path('showforeignersticket/',views.show_foreigners_tickets,name="showforeignersticket"),
+    path('deleteforeignersticket/<int:id>/',views.delete_foreigners_ticket,name="deleteforeignersticket"),
+    path('showtodaytickets/',views.show_today_tickets,name="showtodaytickets"),
+    path('showyesterdaytickets/',views.show_yesterday_tickets,name="showyesterdaytickets"),
+
+
+]

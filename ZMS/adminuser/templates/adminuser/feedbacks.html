@@ -1,0 +1,54 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Manage Feedbacks
+{% endblock title %}
+
+{% block navigationbar %}
+    {% include 'core/navbar.html' %}
+{% endblock navigationbar %}
+
+{% block content %}
+    <div class="container-fluid" style="margin-top:70px;">
+    <h3 class="text-secondary font-weight-bold  text-right alert alert-light border shadow-sm" style="z-index:0;">{{page}}</h3>
+        <div class="row">
+            {% include 'adminuser/sidebar.html' %}
+
+            <div class="col-sm-12 col-md-9 col-lg-10 offset-md-3 offset-lg-2 margin-main">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-11">
+                            <table class="table table-striped border">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Feedback</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for feedback in feedbacks %}
+                                        <tr>
+                                            <td>{{feedback.id}}</td>
+                                            <td>{{feedback.name}}</td>
+                                            <td>{{feedback.email}}</td>
+                                            <td>{{feedback.fdback}}</td>
+                                            <td>
+                                                <a href="{% url 'deletefeedback' feedback.id %}" class="btn border"><i class="fas fa-trash-alt"></i></a>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

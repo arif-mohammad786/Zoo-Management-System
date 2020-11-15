@@ -1,0 +1,30 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}
+About Us
+{% endblock title %}
+
+{% block navigationbar %}
+    {% include 'core/navbar.html' %}
+{% endblock navigationbar %}
+
+{% block content %}
+    
+    <div class="container mb-5" style="margin-top:110px;">
+        <div class="row">
+            <div class="col-sm-8 offset-md-2 text-center border-left border-right border-success margin-main">
+                <h1 class="font-weight-bold text-secondary">About Us</h1>
+                <p style="color:grey">
+                {{about_details}}
+                </p>
+            </div>
+        </div>
+    </div>  
+
+{% endblock content %}
+
+{% block footer %}
+    {% include 'core/footer.html' %}
+{% endblock footer %}

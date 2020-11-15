@@ -1,0 +1,80 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Dashboard
+{% endblock title %}
+
+{% block navigationbar %}
+    {% include 'core/navbar.html' %}
+{% endblock navigationbar %}
+
+{% block content %}
+    <div class="container-fluid" style="margin-top:70px;">
+    <h3 class="text-secondary font-weight-bold  text-right alert alert-light border shadow-sm" style="z-index:0;">{{page}}</h3>
+        <div class="row">
+            {% include 'adminuser/sidebar.html' %}
+
+            <div class="col-sm-12 col-md-9 col-lg-10 offset-md-3 offset-lg-2 margin-main">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-3 mt-5">
+                            <div class="card bg-info text-white">
+                                <h4 class="card-header text-left">Available Animals</h4>
+                                <div class="card-body  text-center">
+                                    <h3 class="card-title">{{animals}}</h3>
+                                    <a href="{% url 'availableanimals' %}" class="btn text-white border float-right">View</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3  mt-5 offset-md-1">
+                            <div class="card bg-secondary text-white">
+                                <h4 class="card-header text-left">Employees</h4>
+                                <div class="card-body  text-center">
+                                    <h3 class="card-title">{{employees}}</h3>
+                                    <a href="{% url 'availableemployees' %}" class="btn text-white border float-right">View</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3  mt-5 offset-md-1">
+                            <div class="card bg-danger text-white">
+                                <h4 class="card-header text-left">Feedbacks</h4>
+                                <div class="card-body  text-center">
+                                    <h3 class="card-title">{{feedbacks}}</h3>
+                                    <a href="{% url 'feedback' %}" class="btn text-white border float-right">View</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3  my-5 offset-md-2">
+                            <div class="card bg-dark text-white">
+                                <h4 class="card-header text-left">Today's Tickets</h4>
+                                <div class="card-body  text-center">
+                                    <h3 class="card-title">{{today_tickets}}</h3>
+                                    <a href="{% url 'showtodaytickets' %}" class="btn text-white border float-right">View</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3  my-5 offset-md-1">
+                            <div class="card bg-success text-white">
+                                <h4 class="card-header text-left">Yesterday's Tickets</h4>
+                                <div class="card-body  text-center">
+                                    <h3 class="card-title">{{yesterday_tickets}}</h3>
+                                    <a href="{% url 'showyesterdaytickets' %}" class="btn text-white border float-right">View</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+{% endblock content %}

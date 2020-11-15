@@ -1,0 +1,45 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Ticket Cost
+{% endblock title %}
+
+{% block navigationbar %}
+    {% include 'core/navbar.html' %}
+{% endblock navigationbar %}
+
+{% block content %}
+    
+    <div class="container mb-5" style="margin-top:110px;">
+        <div class="row">
+        <div class="col-sm-10 offset-md-1 margin-main">
+            <h3 class="font-weight-bold text-secondary text-right">Ticket Prices</h3>
+                <table class="table table-striped border">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>SNo.</th>
+                            <th>Ticket Type</th>
+                            <th>Price(Rs)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for type in types %}
+                            <tr>
+                                <td>{{type.id}}</td>
+                                <td>{{type.ttype}}</td>
+                                <td>{{type.tprice}}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>  
+
+{% endblock content %}
+
+{% block footer %}
+    {% include 'core/footer.html' %}
+{% endblock footer %}

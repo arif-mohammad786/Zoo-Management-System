@@ -1,0 +1,52 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Ticket Types
+{% endblock title %}
+
+{% block navigationbar %}
+    {% include 'core/navbar.html' %}
+{% endblock navigationbar %}
+
+{% block content %}
+    <div class="container-fluid" style="margin-top:70px;">
+    <h3 class="text-secondary font-weight-bold  text-right alert alert-light border shadow-sm" style="z-index:0;">{{page}}</h3>
+        <div class="row">
+            {% include 'adminuser/sidebar.html' %}
+
+            <div class="col-sm-12 col-md-9 col-lg-10 offset-md-3 offset-lg-2 margin-main">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-11">
+                            <table class="table table-striped border">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Ticket Type</th>
+                                        <th>Price(Rs)</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for type in types %}
+                                        <tr>
+                                            <td>{{type.id}}</td>
+                                            <td>{{type.ttype}}</td>
+                                            <td>{{type.tprice}}</td>
+                                            <td>
+                                                <a href="{% url 'edittickettype' type.id %}" class="btn border"><i class="fas fa-pen"></i></a>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

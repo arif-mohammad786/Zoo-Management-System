@@ -1,0 +1,138 @@
+
+<nav class="col-lg-2 col-sm-4 col-md-3 navbar navbar-expand-md  sidebar-position" style="z-index:1;position:fixed;">
+                    <button style="position:absolute;top:-3px;z-index:5;" class="navbar-toggler border mt-3" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon" ;">
+                            <i class="fas fa-bars" style="color:#eb5e28; font-size:28px;"></i>
+                        </span>
+                    </button>
+                    <div class="collapse navbar-collapse border-right  " id="sidebar">
+                        <div class="accordion sidebar" id="accordionExample" style="position:absolute;left:-10px;">
+                            <div class="card " style="width:220px;background-color:#ccc5b9;">
+                                <div class="card-header" id="headingOne">
+                                    <h2 class="mb-0 {% if page == 'Dashboard' %}sidebar-hover{% endif %}" >
+                                        <a href="{% url 'dashboard' %}" class="btn btn-link btn-block text-left font-weight-bold" style="color:black;text-decoration:none;">
+                                        <i class="fas fa-tachometer-alt mr-2" style="color:#403d39"></i>Dashboard</a>
+                                    </h2>
+                                </div>
+                            </div>
+
+                            <div class="card dropdown" style="width:220px;background-color:#ccc5b9;">
+                                <div class="card-header" id="headingOne">
+                                    <h2 class="mb-0 {% if page == 'Add Animal' or page == 'Available Animals' %}sidebar-hover{% endif %}">
+                                        <button class="btn btn-link btn-block text-left dropdown-toggle font-weight-bold text-decoration-none" style="color:black;" type="button" data-toggle="collapse" data-target="#animals" aria-expanded="true" aria-controls="animals">
+                                        <i class="fas fa-hippo mr-2" style="color:#403d39"></i>Manage Animals
+                                        </button>
+                                    </h2>
+                                </div>
+
+                                <div id="animals" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <a href="{% url 'addanimal' %}" class="pl-2 text-dark">Add Animal</a><hr>
+                                        <a href="{% url 'availableanimals' %}" class="pl-2 text-dark">Available Animals</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card " style="width:220px;background-color:#ccc5b9">
+                                <div class="card-header" id="headingOne">
+                                    <h2 class="mb-0 {% if page == 'Update Ticket Types' or page == 'Ticket Types' %}sidebar-hover{% endif %}" >
+                                        <a href="{% url 'tickettypes' %}" class="btn btn-link btn-block text-left font-weight-bold" style="color:black;text-decoration:none;">
+                                        <i class="fas fa-clipboard-list mr-2" style="color:#403d39"></i>Ticket Type</a>
+                                    </h2>
+                                </div>
+                            </div>
+
+                            <div class="card dropdown" style="width:220px;background-color:#ccc5b9">
+                                <div class="card-header" id="headingOne">
+                                    <h2 class="mb-0 {% if page == 'Normal Ticket' or page == 'Manage Normal Tickets' %}sidebar-hover{% endif %}">
+                                        <button class="btn btn-link btn-block text-left dropdown-toggle font-weight-bold text-decoration-none" style="color:black;"  type="button" data-toggle="collapse" data-target="#normalticket" aria-expanded="true" aria-controls="tickets">
+                                        <i class="fas fa-ticket-alt mr-2" style="color:#403d39"></i>Normal Ticket
+                                        </button>
+                                    </h2>
+                                </div>
+
+                                <div id="normalticket" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <a href="{% url 'normalticket' %}" class="pl-2 text-dark">Add Ticket</a><hr>
+                                        <a href="{% url 'shownormalticket' %}" class="pl-2 text-dark">Manage Ticket</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card dropdown" style="width:220px;background-color:#ccc5b9">
+                                <div class="card-header" id="headingOne">
+                                    <h2 class="mb-0 {% if page == 'Foreigners Ticket' or page == 'Manage Foreigners Tickets' %}sidebar-hover{% endif %}">
+                                        <button class="btn btn-link btn-block text-left dropdown-toggle font-weight-bold text-decoration-none" style="color:black;"  type="button" data-toggle="collapse" data-target="#foreignerticket" aria-expanded="true" aria-controls="tickets">
+                                        <i class="fas fa-ticket-alt mr-2" style="color:#403d39"></i>Foreigners Ticket
+                                        </button>
+                                    </h2>
+                                </div>
+
+                                <div id="foreignerticket" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <a href="{% url 'foreignersticket' %}" class="pl-2 text-dark">Add Ticket</a><hr>
+                                        <a href="{% url 'showforeignersticket' %}" class="pl-2 text-dark">Manage Ticket</a>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="card " style="width:220px;background-color:#ccc5b9">
+                                <div class="card-header" id="headingOne">
+                                    <h2 class="mb-0 {% if page == 'Manage Feedbacks' %}sidebar-hover{% endif %}" >
+                                        <a href="{% url 'feedback' %}" class="btn btn-link btn-block text-left font-weight-bold" style="color:black;text-decoration:none;">
+                                        <i class="fas fa-comment-dots mr-2" style="color:#403d39"></i>Feedbacks</a>
+                                    </h2>
+                                </div>
+                            </div>
+
+                            <div class="card dropdown" style="width:220px;background-color:#ccc5b9">
+                                <div class="card-header" id="headingOne">
+                                    <h2 class="mb-0 {% if page == 'Add New Employee' or page == 'Available Employees' %}sidebar-hover{% endif %}">
+                                        <button class="btn btn-link btn-block text-left dropdown-toggle font-weight-bold text-decoration-none" style="color:black;"  type="button" data-toggle="collapse" data-target="#employees" aria-expanded="true" aria-controls="tickets">
+                                        <i class="fas fa-users mr-2" style="color:#403d39"></i>Employees
+                                        </button>
+                                    </h2>
+                                </div>
+
+                                <div id="employees" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <a href="{% url 'addemployee' %}" class="pl-2 text-dark">Add Employee</a><hr>
+                                        <a href="{% url 'availableemployees' %}" class="pl-2 text-dark">Manage Employees</a>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="card " style="width:220px;background-color:#ccc5b9">
+                                <div class="card-header" id="headingOne">
+                                    <h2 class="mb-0 {% if page == 'Update Contact Details' %}sidebar-hover{% endif %}" >
+                                        <a href="{% url 'updatecontactdetails' %}" class="btn btn-link btn-block text-left font-weight-bold" style="color:black;text-decoration:none;">
+                                        <i class="fas fa-phone-square-alt mr-2" style="color:#403d39"></i>Contact Details</a>
+                                    </h2>
+                                </div>
+                            </div>
+
+                            <div class="card " style="width:220px;background-color:#ccc5b9">
+                                <div class="card-header" id="headingOne">
+                                    <h2 class="mb-0 {% if page == 'Update About Details' %}sidebar-hover{% endif %}" >
+                                        <a href="{% url 'updateaboutdetails' %}" class="btn btn-link btn-block text-left font-weight-bold" style="color:black;text-decoration:none;">
+                                        <i class="fas fa-address-card mr-2" style="color:#403d39"></i>About Details</a>
+                                    </h2>
+                                </div>
+                            </div>
+
+                            
+                            <div class="card " style="width:220px;background-color:#ccc5b9">
+                                <div class="card-header" id="headingOne">
+                                    <h2 class="mb-0" >
+                                        <a href="{% url 'logout' %}" class="btn btn-link btn-block text-left font-weight-bold" style="color:black;text-decoration:none;">
+                                        <i class="fas fa-sign-out-alt mr-2" style="color:#403d39"></i>Logout</a>
+                                    </h2>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </nav>
+            

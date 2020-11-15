@@ -1,0 +1,62 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Print Ticket
+{% endblock title %}
+
+{% block navigationbar %}
+    {% include 'core/navbar.html' %}
+{% endblock navigationbar %}
+
+{% block content %}
+    <div class="container-fluid" style="margin-top:70px;">
+    <h3 class="text-secondary font-weight-bold  text-right alert alert-light border shadow-sm" style="z-index:0;">{{page}}</h3>
+        <div class="row">
+            {% include 'adminuser/sidebar.html' %}
+
+            <div class="col-sm-12 col-md-9 col-lg-10 offset-md-3 offset-lg-2 margin-main">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <h5 class="font-weight-bold mt-5" style="color:blue;">{{datetime}}</h5>
+                           <table class="table table-striped border ">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>No. Of Tickets</th>
+                                        <th>Price Per Unit(Rs)</th>
+                                        <th>Total(Rs)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Number of Adults</td>
+                                        <td>{{adults}}</td>
+                                        <td>{{adult_price}}</td>
+                                        <td>{% widthratio adults 1 adult_price %}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Number of Childrens</td>
+                                        <td>{{childrens}}</td>
+                                        <td>{{child_price}}</td>
+                                        <td>{% widthratio childrens 1 child_price %}</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td style="color:red;">Total Ticket Price</td>
+                                        <td></td>
+                                        <td>{{total}}</td>
+                                    </tr>
+                                </tbody>
+                           </table>
+                           <i class="fas fa-print float-right d-print-none" style="font-size:30px;" onclick=window.print()></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

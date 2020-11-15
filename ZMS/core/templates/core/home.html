@@ -1,0 +1,92 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Home
+{% endblock title %}
+
+{% block navigationbar %}
+    {% include 'core/navbar.html' %}
+{% endblock navigationbar %}
+
+{% block content %}
+    <div class="container-fluid jumbotron navimage img-fluid shadow-sm" style="background-image:url('/static/core/images/pic5.jpg');">
+        <div class="row">
+            <div class="col-sm-6 offset-3">
+                 <p style="margin-top:300px;" class="text-justify text-white">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem aliquam
+             ipsum amet, suscipit cumque nulla facere ipsam debitis
+             animi, nesciunt iure pariatur illo provident sunt nemo quia libero veniam nobis.
+        </p>
+            </div>
+        </div>
+       
+    </div>
+
+    <div class="container jumbotron shadow-sm rounded-pill border-left border-right border-success" id="aboutzooid">
+        <div class="row col-sm-10 offset-sm-1"  id="midid">
+            <h3 class="font-weight-bold text-secondary">About This ZOO</h3>
+            <p class="text-justify mt-3" style="overflow-wrap:break-word;">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, 
+                neque aperiam sed iste deleniti omnis odit! Doloremque, corrupti reiciendis 
+                harum cum cupiditate architecto voluptatum saepe dolores magni beatae neque 
+                numquam ullam officia sit enim itaque quos voluptatibus quis laudantium nam 
+                eaque odio? Harum corrupti quisquam, 
+                repellendus itaque recusandae sapiente in.
+            </p>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <h3 class="font-weight-bold text-secondary">Some Animals</h3>
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-3 mt-4 text-center">
+                <div class="card" >
+                    <img src="{% static 'core/images/pic4.jpg '%}" class="card-img-top" alt="image" height="250px">
+                    <div class="card-body" style="background-color:#ccc5b9;">
+                        <h4 class="card-title">Tiger(Bengal Tiger)</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 mt-4 text-center">
+                <div class="card" >
+                    <img src="{% static 'core/images/pic6.jpg '%}" class="card-img-top" alt="image" height="250px">
+                    <div class="card-body" style="background-color:#ccc5b9;">
+                        <h4 class="card-title">White Tiger</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 mt-4 text-center">
+                <div class="card" >
+                    <img src="{% static 'core/images/pic8.jpg '%}" class="card-img-top" alt="image" height="250px">
+                    <div class="card-body" style="background-color:#ccc5b9;">
+                        <h4 class="card-title">Bear</h4>
+                    </div>
+                </div>
+            </div>
+            <div class=" col-md-6 col-lg-3 mt-4 text-center">
+                <div class="card" >
+                    <img src="{% static 'core/images/pic9.jpg '%}" class="card-img-top" alt="image" height="250px">
+                    <div class="card-body" style="background-color:#ccc5b9;">
+                        <h4 class="card-title">Giraffe</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+
+{% block footer %}
+    {% include 'core/footer.html' %}
+{% endblock footer %}
+
+<!--
+admin username=admin
+admin password=adminpass123
+
+root username=root
+root password=root
+
+-->
